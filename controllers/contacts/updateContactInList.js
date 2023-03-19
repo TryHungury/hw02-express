@@ -1,10 +1,10 @@
-const { updateContact } = require('../../models/contacts');
+const {Contacts} = require('../../models/contactsModel');
 
 const updateContactInList = async (req, res, next) => {
     const contactParamsId = req.params.contactId;
     const contactBody = req.body;
 
-    const contacts = await updateContact(contactParamsId, contactBody)
+    const contacts = await Contacts.updateOne({ _id: contactParamsId }, contactBody)
     // console.log(contacts)
 
     if (contacts) {
