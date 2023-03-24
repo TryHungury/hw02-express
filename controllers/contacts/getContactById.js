@@ -1,4 +1,3 @@
-
 const { Contact } = require("../../models/contact");
 const createError = require("http-errors");
 
