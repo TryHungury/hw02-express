@@ -5,13 +5,21 @@ const updateSubscription = async (req, res, next) => {
 
   await User.findByIdAndUpdate(_id, req.body);
   
-  res.status(201).json({
-    status: "Success",
-    data: {
-      subscription,
-      email,
-    },
-  });
+  if (req.user) {
+    res.status(201).json({
+      status: "Success",
+      data: {
+        subscription,
+        email,
+      },
+    });
+    
+  } else {
+    res.status(400).json({
+    status: "Bad Request",
+    })
+
+  }
 };
 
 module.exports = updateSubscription;
