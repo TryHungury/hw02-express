@@ -11,7 +11,7 @@ const signup = async (req, res, next) => {
     throw createError(409, "Email in use");
   }
 
-const gravatarUrl = gravatar.url(email);
+const avatarURL = gravatar.url(email);
 
 const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   await User.create({
@@ -23,7 +23,7 @@ const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   res.status(201).json({
     status: "Success",
     data: {
-      user: { email, subscription, gravatarUrl },
+      user: { email, subscription, avatarURL },
     },
   });
 };
