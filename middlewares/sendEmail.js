@@ -16,18 +16,3 @@ const sendEmail = async (data) => {
 }
 
 module.exports = sendEmail
-// const email = {
-//   to: 'kekor38654@djpich.com',
-//   from: 'serezha.kaminskiy.01@gmail.com', 
-//   subject: 'Sending with SendGrid is Fun',
-//   text: 'and easy to do anywhere, even with Node.js',
-//   html: '<a>and easy to do anywhere, even with Node.js</a>',
-// }
-
-// sgMail
-//   .send(email)
-//   .then(() => {
-//   })
-//   .catch((error) => {
-//     console.error(error)
-//   })
